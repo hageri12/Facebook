@@ -8,8 +8,8 @@
 
 <% @blogs.each do |blog| %>
   <p>タイトル：<%= blog.title %></p>
-  <p>ユーザー名：<%= blog.user.name %>
   <p>本文：<%= blog.content %></p>
+  <p>ユーザー名：<%= blog.user.name %></p>
 
   <%= link_to "ブログを編集する", edit_blog_path(blog.id) %>
   <%= link_to "ブログを削除する", blog_path(blog.id), method: :delete,data: { confirm: '本当に削除していいですか？' } %>
