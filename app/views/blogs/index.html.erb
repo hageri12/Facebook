@@ -1,0 +1,16 @@
+<section class="main-header">
+  <p class="flash"><%= notice %><%= alert %></p>
+</section>
+
+<h1>Fakebook一覧画面</h1>
+
+<%= link_to "ブログを作成する", new_blog_path %>
+
+<% @blogs.each do |blog| %>
+  <p>タイトル：<%= blog.title %></p>
+  <p>ユーザー名：<%= blog.user.name %>
+  <p>本文：<%= blog.content %></p>
+
+  <%= link_to "ブログを編集する", edit_blog_path(blog.id) %>
+  <%= link_to "ブログを削除する", blog_path(blog.id), method: :delete,data: { confirm: '本当に削除していいですか？' } %>
+<% end %>
