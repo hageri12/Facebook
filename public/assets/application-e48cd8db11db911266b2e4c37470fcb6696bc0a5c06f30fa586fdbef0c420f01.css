@@ -1,0 +1,43 @@
+/* line 4, /Users/yuhei/Desktop/Facebook/app/assets/stylesheets/blogs.scss */
+img {
+  height: 50px;
+  width: 50px;
+  max-width: 100%;
+}
+/* line 4, /Users/yuhei/Desktop/Facebook/app/assets/stylesheets/comments.scss */
+ul {
+  padding: 0;
+}
+
+/* line 8, /Users/yuhei/Desktop/Facebook/app/assets/stylesheets/comments.scss */
+.child li {
+  padding-top: 13px;
+  border-bottom: 1px dotted #ccc;
+  list-style-type: none;
+}
+
+/* line 14, /Users/yuhei/Desktop/Facebook/app/assets/stylesheets/comments.scss */
+.right {
+  text-align: right;
+}
+
+/* line 18, /Users/yuhei/Desktop/Facebook/app/assets/stylesheets/comments.scss */
+.left {
+  text-align: left;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
