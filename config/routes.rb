@@ -1,15 +1,32 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    omniauth_callbacks: "users/omniauth_callbacks"
-  }
-  root :to => 'blogs#index'
 
-  resources :blogs, only:[:index,:new,:create,:edit,:update,:destroy]
+  resources :conversations do
+    resources :messages
+  end
+
+  ##get 'relationships/create'
+
+  ##get 'relationships/destroy'
+
+  resources :relationships, only: [:create, :destroy]
+
+  resources :users, only: [:index]
+
+  devise_for :users, controllers: {
+   registrations: "users/registrations",
+   omniauth_callbacks: "users/omniauth_callbacks"
+}
+  root :to => 'blogs#index'
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
+
+  resources :blogs do
+    resources :comments
+    post :confirm, on: :collection
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

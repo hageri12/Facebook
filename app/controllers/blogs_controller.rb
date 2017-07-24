@@ -1,10 +1,19 @@
 class BlogsController < ApplicationController
 
-before_action :set_blog, only: [:edit,:update,:destroy]
+before_action :set_blog, only: [:show, :edit,:update,:destroy]
 before_action :authenticate_user!
 
   def index
     @blogs = Blog.all
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def show
+    @comment = @blog.comments.build
+    @comments = @blog.comments
   end
 
   def new
@@ -40,7 +49,7 @@ before_action :authenticate_user!
 
 private
   def blogs_params
-    params.require(:blog).permit(:title, :content)
+    params.require(:blog).permit(:title, :content,:avatar)
   end
 
   def set_blog
