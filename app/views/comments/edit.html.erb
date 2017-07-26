@@ -1,10 +1,12 @@
 <p>コメント編集</p>
 <%= form_for([@blog,@comment]) do |f| %>
   <%= f.hidden_field :blog_id %>
-  <div class="field">
+  <div class="field col-md-offset-4 col-md-4">
     <%= f.text_field :content, placeholder: "内容", class: "form-control"  %>
   </div>
+  <br>
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "編集する", class:"btn btn-large btn-primary" %>
   </div>
 <% end %>

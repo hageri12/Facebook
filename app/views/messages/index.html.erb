@@ -20,14 +20,19 @@
     <% end %>
   <% end %>
 </div>
-
+<br>
+<br>
+<br>
 <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
+<div class="col-md-offset-4 col-md-4">
   <div class="field">
     <%= f.text_area :body, class: "form-control" %>
   </div>
+  <br>
     <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+    <br>
   <div>
-    <%= f.submit "メッセージを送る" %>
+    <%= f.submit "メッセージを送る" ,class: "btn btn-large btn-primary"  %>
   </div>
-
+</div>
 <% end %>

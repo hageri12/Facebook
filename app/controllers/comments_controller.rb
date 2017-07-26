@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
     @blog = @comment.blog
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to blog_path(@blog), notice: 'コメントを削除しました。'}
+        format.html { redirect_to blog_path(@blog), notice: 'コメントを編集しました。'}
       else
         format.html {render :new}
       end

@@ -1,3 +1,4 @@
+<div class="col-md-offset-4 col-md-4">
 <%= form_for(@blog) do |f| %>
   <% if @blog.errors.any? %>
     <div id="error_explanation">
@@ -10,14 +11,17 @@
       </ul>
     </div>
   <% end %>
-
+<br>
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title,class:"form-control" %>
   <br>
   <%= f.label :content %>
-  <%= f.text_field :content %>
+  <%= f.text_field :content,class:"form-control" %>
   <br>
-  <%= f.submit %>
+  <%= f.submit"登録",class: "btn btn-large btn-default" %>
 <% end %>
-
+<br>
+<br>
+<br>
 <%= link_to "ブログ一覧画面にもどる", blogs_path %>
+</div>

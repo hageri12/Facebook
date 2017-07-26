@@ -1,6 +1,7 @@
 <ul>
   <% comments.each do |comment| %>
     <% unless comment.id.nil? %>
+    <div class="row">
       <li>
         <p class="left"><%= comment.user.name %>さんがコメントしました。</p>
         <p class="left"><%= comment.content %></p>
@@ -11,6 +12,7 @@
           <% end %>
           </p>
       </li>
+    </div>
     <% end %>
   <% end %>
 </ul>

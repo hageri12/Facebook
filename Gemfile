@@ -32,6 +32,8 @@ gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'twitter-bootstrap-rails'
+
 group :development do
   gem 'letter_opener_web'
   gem 'dotenv-rails'

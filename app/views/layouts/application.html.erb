@@ -9,17 +9,27 @@
 <body>
 <header>
   <% if user_signed_in? %>
-    <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
-    <li><%= link_to "メッセージ", conversations_path %></li>
-    <li><%= link_to 'マイページ', edit_user_registration_path %></li>
-    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    <li><%= link_to "トップ", blogs_path,:style=>"color:white;" %></li>
+    <li><%= link_to 'ユーザー一覧', users_path,:style=>"color:white;"%></li>
+    <li><%= link_to "メッセージ", conversations_path,:style=>"color:white;" %></li>
+    <li><%= link_to 'マイページ', edit_user_registration_path,:style=>"color:white;" %></li>
+    <li><%= link_to 'ログアウト', destroy_user_session_path,:style=>"color:white;", method: :delete %></li>
   <% else %>
-    <li><%= link_to 'ログイン', new_user_session_path  %></li>
-    <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+    <li><%= link_to 'ログイン', new_user_session_path,:style=>"color:white;"  %></li>
+    <li><%= link_to 'サインアップ', new_user_registration_path,:style=>"color:white;" %></li>
   <% end %>
 </header>
 
+
+<% if(notice||alert) %>
+<section class="main-header ">
+  <p class="flash alert alert-success"><%= notice %><%= alert %></p>
+</section>
+<% end %>
+
+<div class="main-contents">
 <%= yield %>
+</div>
 
 </body>
 </html>
