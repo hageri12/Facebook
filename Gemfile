@@ -34,6 +34,10 @@ gem 'mini_magick'
 
 gem 'twitter-bootstrap-rails'
 
+gem 'faker'
+
+gem 'fog'
+
 group :development do
   gem 'letter_opener_web'
   gem 'dotenv-rails'
