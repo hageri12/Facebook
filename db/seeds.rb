@@ -6,7 +6,7 @@
              password: password,
              password_confirmation: password,
              uid: SecureRandom.uuid
-            )
+             )
 end
 
 

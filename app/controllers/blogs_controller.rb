@@ -1,7 +1,6 @@
 class BlogsController < ApplicationController
-
-before_action :set_blog, only: [:show, :edit,:update,:destroy]
-before_action :authenticate_user!
+  before_action :set_blog, only: [:show, :edit,:update,:destroy]
+  before_action :authenticate_user!
 
   def index
     @blogs = Blog.all
@@ -20,9 +19,10 @@ before_action :authenticate_user!
     @blog = Blog.new
   end
 
+  #@blog = Blog.create(blogs_params)
+  #@blog.user_id = current_user.id
   def create
-    @blog = Blog.create(blogs_params)
-    @blog.user_id = current_user.id
+    @blog = current_user.blogs.build(blogs_params)
     if @blog.save
       redirect_to blogs_path, notice: "ブログを作成しました！"
       NoticeMailer.sendmail_blog(@blog).deliver
