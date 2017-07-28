@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to conversation_messages_path(@conversation)
     else
-      redirect_to conversation_messages_path, notice: "メッセージを入力してください"
+      redirect_to conversation_messages_path, method: :get,notice: "メッセージを入力してください"
     end
   end
 
