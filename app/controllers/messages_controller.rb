@@ -28,8 +28,6 @@ class MessagesController < ApplicationController
     @message = @conversation.messages.build(message_params)
     if @message.save
       redirect_to conversation_messages_path(@conversation)
-    else
-      redirect_to conversation_messages_path, method: :get,notice: "メッセージを入力してください"
     end
   end
 
